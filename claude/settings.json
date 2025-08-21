@@ -7,7 +7,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": ".claude/hooks/reminder/reminder.py"
+            "command": "./claude/hooks/reminder/reminder.py"
           }
         ]
       }
