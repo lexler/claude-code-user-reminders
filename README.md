@@ -115,12 +115,6 @@ Run from project root:
 ./test.sh
 ```
 
-The tests verify:
-- Correct output format
-- Proper exit codes
-- Random selection from reminder list
-- Output to stdout (not stderr)
-
 ## Troubleshooting
 
 **Reminders not appearing?**
@@ -128,10 +122,6 @@ The tests verify:
 - Ensure reminder.py has execute permissions: `chmod +x reminder.py`
 - Check Claude Code logs for hook execution errors
 - Make sure you started the new conversation
-
-**Getting permission errors?**
-- The script uses `uv` for Python isolation. Install with: `curl -LsSf https://astral.sh/uv/install.sh | sh`
-- Alternatively, modify the shebang to use system Python: `#!/usr/bin/env python3`
 
 ## License
 
