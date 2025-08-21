@@ -1,12 +1,12 @@
 # Claude Code Reminder Hook
 
-A lightweight Claude Code hook that ensures your assistant consistently follows your most important rules by injecting contextual reminders before each prompt.
+A lightweight Claude Code hook that ensures your assistant consistently follows your most important rules by injecting contextual reminders with each user prompt.
 
 ## What It Does
 
-This hook solves a common frustration: Claude Code may forget to follow your critical rules from `CLAUDE.md`, even though it consistently uses its internal tools like TODOs. 
-
-The reason? Anthropic uses hidden `<system-reminder>` tags to nudge Claude Code toward certain behaviors. 
+This hook solves a common frustration: Claude Code forgets to follow your critical rules from `CLAUDE.md`, especially as the conversation gets longer.
+But it is very good and consistent when using its internal tools like TODOs. Why is it so good at those and so bad at following your instructions?
+Part of the reason is that Anthropic uses hidden `<system-reminder>` tags to nudge Claude Code toward certain behaviors. 
 This project brings that same power to you, allowing you to inject your own reminders that appear before each user prompt.
 
 ## How It Works
@@ -17,7 +17,7 @@ The hook:
 3. Injects it as a `<reminder>` tag that's visible to Claude Code but mostly invisible to you
 4. Helps Claude Code maintain consistent behavior across long conversations
 
-You can view these reminders by:
+You can view these reminders after installing this hook by starting a new Claude Code session and:
 - Pressing `Esc` twice after Claude finishes responding
 - Checking conversation logs in `~/.claude/projects/` for a given conversation
 
@@ -25,12 +25,14 @@ You can view these reminders by:
 
 ### Prerequisites
 - Python 3.8 or higher
-- [uv](https://github.com/astral-sh/uv) (recommended) or standard Python
+- [uv](https://github.com/astral-sh/uv) - Install with: `curl -LsSf https://astral.sh/uv/install.sh | sh`
+  - Or modify the shebang in `reminder.py` from `#!/usr/bin/env -S uv run --script` to `#!/usr/bin/env python3`
 
 ### Step 1: Clone or Download
-1. Clone this repository or download the `claude/hooks/reminder/` folder
-2. Rename `claude` to `.claude` (add the dot to make it hidden)
-3. Place the `.claude` folder in your project or user directory
+1. Clone this repository
+2. Copy the `claude/hooks/reminder/` folder to wherever you want to store your hooks
+   - For example: `~/.claude/hooks/reminder/` for global use
+   - Or: `/path/to/your/project/.claude/hooks/reminder/` for project-specific use
 
 ### Step 2: Configure Settings
 
@@ -64,7 +66,7 @@ You can view these reminders by:
 
 ## Customization
 
-Edit the `reminders` list in `claude/hooks/reminder/reminder.py` (or `.claude/hooks/reminder/reminder.py` after renaming):
+Edit the `reminders` list in the `reminder.py` file wherever you copied it:
 
 ```python
 reminders = [
