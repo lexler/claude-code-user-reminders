@@ -62,7 +62,7 @@ You can view these reminders after installing this hook by starting a new Claude
 **If settings.json doesn't exist yet:**
 1. Type `/hooks` in Claude Code to create a dummy hook. Select one of the options, for example, stop hook. Create command like 'ls' or 'pwd' that does nothing.
 2. Claude Code will create the settings.json file for you, depending on which level 
-3. Edit the file and replace the dummy hook with the reminder hook below
+3. Edit the file and replace the dummy hook with the reminder hook configuration.
 
 ## Customization
 
